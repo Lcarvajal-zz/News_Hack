@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="lcarvajal.news_hack"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="18" />
+>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+    <android:uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".WSJhome"
+            android:label="@string/title_activity_wsjhome" >
+        </activity>
+        <activity
+            android:name=".NYThome"
+            android:label="@string/title_activity_nythome" >
+        </activity>
+        <activity
+            android:name=".WSJheadlines"
+            android:label="@string/title_activity_wsjheadlines" >
+        </activity>
+        <activity
+            android:name=".WSJworldnews"
+            android:label="@string/title_activity_wsjworldnews" >
+        </activity>
+        <activity
+            android:name=".WSJusnews"
+            android:label="@string/title_activity_wsjusnews" >
+        </activity>
+        <activity
+            android:name=".WSJpolitics"
+            android:label="@string/title_activity_wsjpolitics" >
+        </activity>
+        <activity
+            android:name=".WSJopinion"
+            android:label="@string/title_activity_wsjopinion" >
+        </activity>
+    </application>
+
+</manifest>

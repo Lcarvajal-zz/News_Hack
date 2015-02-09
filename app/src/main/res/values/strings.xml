@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">News Hack</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_wsjhome">WSJ Home</string>
+    <string name="wsj_name">Wall Street Journal</string>
+    <string name="nyt_name">New York Times</string>
+    <string name="title_activity_nythome">NYT Home</string>
+    <string name="not_done">Still under construction...</string>
+    <string name="title_activity_wsjheadlines">WSJ Headlines</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_wsjworldnews">WSJ World News</string>
+    <string name="title_activity_wsjusnews">WSJ US News</string>
+    <string name="title_activity_wsjpolitics">WSJ Politics</string>
+    <string name="title_activity_wsjopinion">WSJ Opinion</string>
+
+</resources>
