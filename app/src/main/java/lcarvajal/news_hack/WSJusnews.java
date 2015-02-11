@@ -1,5 +1,7 @@
 package lcarvajal.news_hack;
 
+import android.app.Activity;
+import android.content.Context;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,6 +14,13 @@ public class WSJusnews extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wsjusnews);
+
+        String url = "http://www.wsj.com/public/page/news-world-business.html";
+        int limit = 10;
+        Context mContext = this;
+        Activity activity = this;
+
+        new WSJextract(url, limit, mContext, activity).execute();
     }
 
 

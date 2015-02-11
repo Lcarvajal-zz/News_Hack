@@ -2,6 +2,7 @@ package lcarvajal.news_hack;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -26,6 +27,7 @@ public class WSJhome extends Activity
         //dynamic buttons
         Button[] wsjButtons = new Button[5];
         LinearLayout srcViewButLay = (LinearLayout)findViewById(R.id.button_layout);
+
 
         String NEWSTYPE = new String();
 
@@ -52,6 +54,7 @@ public class WSJhome extends Activity
 
             //give button text
             wsjButtons[i].setText(NEWSTYPE);
+            wsjButtons[i].setBackgroundResource(R.drawable.standard_button);
 
             final int a = i;
             //button actions
@@ -76,6 +79,8 @@ public class WSJhome extends Activity
                     startActivity(wsj);
                 }
             });
+
+
         }
 
 

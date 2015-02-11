@@ -24,13 +24,13 @@ public class WSJworldnews extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wsjworldnews);
 
-        String url = "http://www.wsj.com/public/page/news-global-world";
+        String url = "http://www.wsj.com/public/page/news-global-world.html";
+        int limit = 3;
         Context mContext = this;
         Activity activity = this;
 
-        new WSJextract(url, mContext, activity).execute();
+        new WSJextract(url, limit, mContext, activity).execute();
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

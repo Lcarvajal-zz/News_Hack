@@ -32,10 +32,11 @@ public class WSJheadlines extends ActionBarActivity {
         setContentView(R.layout.activity_wsjheadlines);
 
         String url = "http://wsj.com/home-page";
+        int limit = 15;
         Context mContext = this;
         Activity activity = this;
 
-        new WSJextract(url, mContext, activity).execute();
+        new WSJextract(url, limit, mContext, activity).execute();
     }
 
     @Override

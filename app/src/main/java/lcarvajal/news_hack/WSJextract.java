@@ -27,6 +27,7 @@ import java.util.ArrayList;
 public class WSJextract extends AsyncTask<Void, Void, Void>
         //pull out titles and urls of wsj home page
 {
+    int articleLimit;
     String url;
     Context mContext;
     Activity activity;
@@ -35,11 +36,12 @@ public class WSJextract extends AsyncTask<Void, Void, Void>
     ArrayList<String> urls = new ArrayList<String>();
     ArrayList<String> titles = new ArrayList<String>();
 
-    public WSJextract(String u, Context c, Activity a)
+    public WSJextract(String u, int l, Context c, Activity a)
     {
         url = u;
         mContext = c;
         activity = a;
+        articleLimit = l;
     }
 
     @Override
@@ -63,8 +65,6 @@ public class WSJextract extends AsyncTask<Void, Void, Void>
             //counter
             int i = 0;
 
-            String tempUrl;
-
             //stores all headlines
             Elements headline_elems = document.select(".tipTarget");
 
@@ -81,7 +81,7 @@ public class WSJextract extends AsyncTask<Void, Void, Void>
 
                 i++;
 
-                if (i == 15) //extract 15 titles and urls
+                if (i == articleLimit) //extract 15 titles and urls
                     break;
             }
 
@@ -120,6 +120,9 @@ public class WSJextract extends AsyncTask<Void, Void, Void>
 
             //give button text
             wsjButtons[i].setText(titles.get(i));
+
+            //give buttons look
+            wsjButtons[i].setBackgroundResource(R.drawable.standard_button);
 
             //needed for onClick
             final int a = i;
