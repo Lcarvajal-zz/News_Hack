@@ -2,21 +2,16 @@ package lcarvajal.news_hack;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
-
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -85,6 +80,7 @@ public class WSJextract extends AsyncTask<Void, Void, Void>
                     break;
             }
 
+            /*
             String preURL = "http://translate.google.com/translate?sl=ja&tl=en&u=";
 
             for (i = 0; i < urls.size(); i++) {
@@ -97,6 +93,8 @@ public class WSJextract extends AsyncTask<Void, Void, Void>
                 Element link = document2.select("iframe").first();
                 urls.set(i, link.attr("abs:src"));
             }
+
+            */
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -127,19 +125,22 @@ public class WSJextract extends AsyncTask<Void, Void, Void>
             //needed for onClick
             final int a = i;
 
+            final String tempUrl = urls.get(i);
+            final String titled = titles.get(i);
+
             //button actions
             wsjButtons[i].setOnClickListener(new View.OnClickListener() {
-                Intent wsj;
+                public void onClick(View v)
+                //send url to DisplayArticle so content is displayed within app
+                {
+                    //use url to access hacked article
+                    new WSJaccess(tempUrl, titled, mContext, activity).execute();
 
-                public void onClick(View v) {
-                    //open browser with hacked url
-                    Intent webPageIntent = new Intent(Intent.ACTION_VIEW);
-                    webPageIntent.setData((Uri.parse(urls.get(a))));
-
-                    try {
-                        activity.startActivity(webPageIntent);
-                    } catch (ActivityNotFoundException ex) {
-                    }
+                    /*
+                    Intent ii=new Intent(mContext, DisplayArticle.class);
+                    ii.putExtra("HACKED_URL", tempUrl);
+                    mContext.startActivity(ii);
+                    */
                 }
             });
         }

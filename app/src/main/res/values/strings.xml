@@ -14,5 +14,6 @@
     <string name="title_activity_wsjusnews">WSJ US News</string>
     <string name="title_activity_wsjpolitics">WSJ Politics</string>
     <string name="title_activity_wsjopinion">WSJ Opinion</string>
+    <string name="title_activity_display_article">Display Article</string>
 
 </resources>
