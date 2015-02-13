@@ -8,18 +8,19 @@ import android.os.AsyncTask;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+
 import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Created by Lukas on 10-Feb-15.
- * WSJextract pulls out unhacked urls and titles of articles
+ * Created by Lukas on 12-Feb-15.
  */
-public class WSJextract extends AsyncTask<Void, Void, Void>
+public class NYTextract extends AsyncTask<Void, Void, Void>
         //pull out titles and urls of wsj home page
 {
     int articleLimit;
@@ -31,7 +32,7 @@ public class WSJextract extends AsyncTask<Void, Void, Void>
     ArrayList<String> urls = new ArrayList<String>();
     ArrayList<String> titles = new ArrayList<String>();
 
-    public WSJextract(String u, int l, Context c, Activity a)
+    public NYTextract(String u, int l, Context c, Activity a)
     {
         url = u;
         mContext = c;
@@ -53,30 +54,31 @@ public class WSJextract extends AsyncTask<Void, Void, Void>
     @Override
     protected Void doInBackground(Void... params) {
         try {
-            // Connect to the wsj, appear to be coming from a browser with .referrer
-            Document document = Jsoup.connect(url).referrer("http://www.google.com").get();
-
-
             //counter
             int i = 0;
 
-            //stores all headlines
-            Elements headline_elems = document.select(".tipTarget");
+            //create doc to hold html content
+            Document document1 = Jsoup.connect(url).get();
 
-            for (Element headline_elem : headline_elems)
-            //loop extracting titles and urls
+            //take url1 to web page where actual content is
+            Elements headings = document1.select("h3");
+
+            String s = new String();
+
+            for(Element heading : headings)
+            //loop through articleLimit number of titles
             {
-                //stores article title
-                titles.add(headline_elem.text());
+                s = heading.text();
+                titles.add(s);
 
                 //stores and manipulates url for hacking
-                urls.add(headline_elem.outerHtml());
-                urls.set(i, urls.get(i).replace("<h2 class=\"tipTarget\"><a href=\"", ""));
+                urls.add(heading.outerHtml());
+                urls.set(i, urls.get(i).replace("<h3><a href=\"", ""));
                 urls.set(i, urls.get(i).split("\"")[0]);
 
-                i++;
+                i++;    //number of article headings extracted
 
-                if (i == articleLimit) //extract 15 titles and urls
+                if(i == articleLimit)
                     break;
             }
         } catch (IOException e) {
@@ -90,33 +92,33 @@ public class WSJextract extends AsyncTask<Void, Void, Void>
     //put title names on buttons and give button function
     {
         //dynamic buttons with seperators
-        Button[] wsjButtons = new Button[urls.size()];
+        Button[] nytButtons = new Button[titles.size()];
         LinearLayout srcViewButLay = (LinearLayout) activity.findViewById(R.id.button_layout);
 
-        for (int i = 0; i < urls.size(); i++) {
+        for (int i = 0; i < titles.size(); i++) {
             //BUTTONS
             //initialize button
-            wsjButtons[i] = new Button(mContext);
+            nytButtons[i] = new Button(mContext);
 
             //add button to layout
-            srcViewButLay.addView(wsjButtons[i]);
+            srcViewButLay.addView(nytButtons[i]);
 
             //give button text
-            wsjButtons[i].setText(titles.get(i));
-            wsjButtons[i].setTextColor(Color.parseColor("#FFFFFF"));
+            nytButtons[i].setText(titles.get(i));
+            nytButtons[i].setTextColor(Color.parseColor("#FFFFFF"));
 
             //give buttons look
-            wsjButtons[i].setBackgroundResource(R.drawable.standard_button);
+            nytButtons[i].setBackgroundResource(R.drawable.standard_button);
 
             //needed for onClick
             final int a = i;
-            final String tempUrl = urls.get(i);
             final String titled = titles.get(i);
+            final String tempUrl = urls.get(i);
 
 
 
             //button actions
-            wsjButtons[i].setOnClickListener(new View.OnClickListener() {
+            nytButtons[i].setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v)
                 //send url to DisplayArticle so content is displayed within app
                 {

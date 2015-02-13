@@ -1,9 +1,10 @@
 package lcarvajal.news_hack;
 
-import android.app.Activity;
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -16,13 +17,15 @@ import java.util.ArrayList;
  * Wall Street Journal home page
  * this class creates buttons that open up to each news category
  */
-public class WSJhome extends Activity
+public class WSJhome extends ActionBarActivity
 {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wsj_home);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.ic_launcher);
 
         //dynamic buttons
         Button[] wsjButtons = new Button[5];
@@ -55,6 +58,7 @@ public class WSJhome extends Activity
             //give button text
             wsjButtons[i].setText(NEWSTYPE);
             wsjButtons[i].setBackgroundResource(R.drawable.standard_button);
+            wsjButtons[i].setTextColor(Color.parseColor("#FFFFFF"));
 
             final int a = i;
             //button actions
@@ -79,6 +83,7 @@ public class WSJhome extends Activity
                     startActivity(wsj);
                 }
             });
+
 
 
         }

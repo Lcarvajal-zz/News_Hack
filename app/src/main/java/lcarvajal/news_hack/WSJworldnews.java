@@ -23,6 +23,8 @@ public class WSJworldnews extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wsjworldnews);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.ic_launcher);
 
         String url = "http://www.wsj.com/public/page/news-global-world.html";
         int limit = 3;

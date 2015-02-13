@@ -9,12 +9,11 @@
         android:targetSdkVersion="18" />
 
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <android:uses-permission
+    <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <android:uses-permission
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
 
@@ -22,11 +21,11 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/Theme.AppCompat.Light.DarkActionBar" >
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,42 +35,70 @@
         <activity
             android:name=".WSJhome"
             android:label="@string/title_activity_wsjhome"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".NYThome"
             android:label="@string/title_activity_nythome"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".WSJheadlines"
             android:label="@string/title_activity_wsjheadlines"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".WSJworldnews"
             android:label="@string/title_activity_wsjworldnews"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".WSJusnews"
             android:label="@string/title_activity_wsjusnews"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".WSJpolitics"
             android:label="@string/title_activity_wsjpolitics"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".WSJopinion"
             android:label="@string/title_activity_wsjopinion"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".DisplayArticle"
-            android:label="@string/title_activity_display_article"
-            android:configChanges="orientation">
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_display_article" >
+        </activity>
+        <activity
+            android:name=".NYTheadlines"
+            android:label="@string/title_activity_nytheadlines" >
+        </activity>
+        <activity
+            android:name=".NYTopinion"
+            android:label="@string/title_activity_nytopinion" >
+        </activity>
+        <activity
+            android:name=".NYTpolitics"
+            android:label="@string/title_activity_nytpolitics" >
+        </activity>
+        <activity
+            android:name=".NYTusnews"
+            android:label="@string/title_activity_nytusnews" >
+        </activity>
+        <activity
+            android:name=".NYTworldnews"
+            android:label="@string/title_activity_nytworldnews" >
+        </activity>
+        <activity
+            android:name=".NYTbusiness"
+            android:label="@string/title_activity_nytbusiness" >
+        </activity>
+        <activity
+            android:name=".NYTtech"
+            android:label="@string/title_activity_nyttech" >
         </activity>
     </application>
 

@@ -1,50 +1,35 @@
 package lcarvajal.news_hack;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
-import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
-import java.io.IOException;
-import java.util.ArrayList;
 
 
-public class WSJheadlines extends ActionBarActivity {
+public class NYTusnews extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wsjheadlines);
+        setContentView(R.layout.activity_nyt_us_news);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.drawable.ic_launcher);
 
-        String url = "http://wsj.com/home-page";
-        int limit = 15;
+        String url = "http://www.nytimes.com/pages/national/index.html";
+        int limit = 29;
         Context mContext = this;
         Activity activity = this;
 
-        new WSJextract(url, limit, mContext, activity).execute();
+        new NYTextract(url, limit, mContext, activity).execute();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_wsjheadlines, menu);
+        getMenuInflater().inflate(R.menu.menu_nyt_us_news, menu);
         return true;
     }
 

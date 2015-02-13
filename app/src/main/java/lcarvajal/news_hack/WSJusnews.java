@@ -14,6 +14,8 @@ public class WSJusnews extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wsjusnews);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.drawable.ic_launcher);
 
         String url = "http://www.wsj.com/public/page/news-world-business.html";
         int limit = 10;

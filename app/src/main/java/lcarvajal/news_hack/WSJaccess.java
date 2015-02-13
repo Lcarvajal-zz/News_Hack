@@ -18,7 +18,6 @@ import java.util.ArrayList;
  * accesses hacked url for viewing web page
  */
 public class WSJaccess extends AsyncTask<Void, Void, Void>
-//access WSJ article info using url
 {
     String url;
     String title;
@@ -38,7 +37,7 @@ public class WSJaccess extends AsyncTask<Void, Void, Void>
     protected void onPreExecute() {
         super.onPreExecute();
         mProgressDialog = new ProgressDialog(mContext);
-        mProgressDialog.setTitle("Free Reader");
+        mProgressDialog.setTitle("News Hack");
         mProgressDialog.setMessage("Opening " + title + "...");
         mProgressDialog.setIndeterminate(false);
         mProgressDialog.show();
@@ -71,11 +70,10 @@ public class WSJaccess extends AsyncTask<Void, Void, Void>
        //Send hacked url to DisplayArticle
        Intent intent = new Intent(mContext, DisplayArticle.class);
        intent.putExtra("HACKED_URL", url);
-        
+
         mContext.startActivity(intent);
 
        mProgressDialog.dismiss();
        super.onPostExecute(result);
     }
 }
-//END OF PULL OUT TITLES AND URLS, MANIPULATE WSJ URLS, SET ONCLICK FUNCTIONS
