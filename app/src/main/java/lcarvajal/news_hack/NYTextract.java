@@ -105,7 +105,7 @@ public class NYTextract extends AsyncTask<Void, Void, Void>
 
             //give button text
             nytButtons[i].setText(titles.get(i));
-            nytButtons[i].setTextColor(Color.parseColor("#FFFFFF"));
+            nytButtons[i].setTextColor(Color.parseColor("#000000"));
 
             //give buttons look
             nytButtons[i].setBackgroundResource(R.drawable.standard_button);
@@ -126,6 +126,11 @@ public class NYTextract extends AsyncTask<Void, Void, Void>
                     new WSJaccess(tempUrl, titled, mContext, activity).execute();
                 }
             });
+
+            //create a distance between buttons
+            LinearLayout.LayoutParams lp=(LinearLayout.LayoutParams)nytButtons[i].getLayoutParams();
+            lp.topMargin = 10;
+            lp.bottomMargin = 10;
         }
         mProgressDialog.dismiss();
         super.onPostExecute(result);

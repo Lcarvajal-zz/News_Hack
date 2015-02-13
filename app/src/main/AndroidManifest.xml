@@ -58,11 +58,6 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".WSJpolitics"
-            android:label="@string/title_activity_wsjpolitics"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
             android:name=".WSJopinion"
             android:label="@string/title_activity_wsjopinion"
             android:screenOrientation="portrait" >
@@ -73,32 +68,34 @@
             android:label="@string/title_activity_display_article" >
         </activity>
         <activity
-            android:name=".NYTheadlines"
-            android:label="@string/title_activity_nytheadlines" >
-        </activity>
-        <activity
-            android:name=".NYTopinion"
-            android:label="@string/title_activity_nytopinion" >
-        </activity>
-        <activity
             android:name=".NYTpolitics"
-            android:label="@string/title_activity_nytpolitics" >
+            android:label="@string/title_activity_nytpolitics"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".NYTusnews"
-            android:label="@string/title_activity_nytusnews" >
+            android:label="@string/title_activity_nytusnews"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".NYTworldnews"
-            android:label="@string/title_activity_nytworldnews" >
+            android:label="@string/title_activity_nytworldnews"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".NYTbusiness"
-            android:label="@string/title_activity_nytbusiness" >
+            android:label="@string/title_activity_nytbusiness"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".NYTtech"
-            android:label="@string/title_activity_nyttech" >
+            android:label="@string/title_activity_nyttech"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".WSJbusiness"
+            android:label="@string/title_activity_wsjbusiness"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

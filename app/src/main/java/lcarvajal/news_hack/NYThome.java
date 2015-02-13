@@ -55,7 +55,7 @@ public class NYThome extends ActionBarActivity {
             //give button text
             nytButtons[i].setText(NEWSTYPE);
             nytButtons[i].setBackgroundResource(R.drawable.standard_button);
-            nytButtons[i].setTextColor(Color.parseColor("#FFFFFF"));
+            nytButtons[i].setTextColor(Color.parseColor("#000000"));
 
             final int a = i;
             //button actions
@@ -80,6 +80,11 @@ public class NYThome extends ActionBarActivity {
                     startActivity(nyt);
                 }
             });
+
+            //create a distance between buttons
+            LinearLayout.LayoutParams lp=(LinearLayout.LayoutParams)nytButtons[i].getLayoutParams();
+            lp.topMargin = 10;
+            lp.bottomMargin = 10;
         }
     }
 

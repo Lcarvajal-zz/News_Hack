@@ -8,6 +8,8 @@ import android.os.AsyncTask;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -103,7 +105,7 @@ public class WSJextract extends AsyncTask<Void, Void, Void>
 
             //give button text
             wsjButtons[i].setText(titles.get(i));
-            wsjButtons[i].setTextColor(Color.parseColor("#FFFFFF"));
+            wsjButtons[i].setTextColor(Color.parseColor("#000000"));
 
             //give buttons look
             wsjButtons[i].setBackgroundResource(R.drawable.standard_button);
@@ -124,6 +126,11 @@ public class WSJextract extends AsyncTask<Void, Void, Void>
                     new WSJaccess(tempUrl, titled, mContext, activity).execute();
                 }
             });
+
+            //create a distance between buttons
+            LinearLayout.LayoutParams lp=(LinearLayout.LayoutParams)wsjButtons[i].getLayoutParams();
+            lp.topMargin = 10;
+            lp.bottomMargin = 10;
         }
         mProgressDialog.dismiss();
         super.onPostExecute(result);

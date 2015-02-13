@@ -28,7 +28,7 @@ public class WSJhome extends ActionBarActivity
         getSupportActionBar().setIcon(R.drawable.ic_launcher);
 
         //dynamic buttons
-        Button[] wsjButtons = new Button[5];
+        Button[] wsjButtons = new Button[6];
         LinearLayout srcViewButLay = (LinearLayout)findViewById(R.id.button_layout);
 
 
@@ -49,7 +49,7 @@ public class WSJhome extends ActionBarActivity
                     break;
                 case 2: NEWSTYPE = "US News";
                     break;
-                case 3: NEWSTYPE = "Politics";
+                case 3: NEWSTYPE = "Business";
                     break;
                 case 4: NEWSTYPE = "Opinion";
                     break;
@@ -58,7 +58,7 @@ public class WSJhome extends ActionBarActivity
             //give button text
             wsjButtons[i].setText(NEWSTYPE);
             wsjButtons[i].setBackgroundResource(R.drawable.standard_button);
-            wsjButtons[i].setTextColor(Color.parseColor("#FFFFFF"));
+            wsjButtons[i].setTextColor(Color.parseColor("#000000"));
 
             final int a = i;
             //button actions
@@ -74,7 +74,7 @@ public class WSJhome extends ActionBarActivity
                             break;
                         case 2: wsj = new Intent(WSJhome.this, WSJusnews.class);
                             break;
-                        case 3: wsj = new Intent(WSJhome.this, WSJpolitics.class);
+                        case 3: wsj = new Intent(WSJhome.this, WSJbusiness.class);
                             break;
                         case 4: wsj = new Intent(WSJhome.this, WSJopinion.class);
                             break;
@@ -84,8 +84,10 @@ public class WSJhome extends ActionBarActivity
                 }
             });
 
-
-
+            //create a distance between buttons
+            LinearLayout.LayoutParams lp=(LinearLayout.LayoutParams)wsjButtons[i].getLayoutParams();
+            lp.topMargin = 10;
+            lp.bottomMargin = 10;
         }
 
 

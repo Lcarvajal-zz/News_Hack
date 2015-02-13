@@ -17,10 +17,12 @@
     <string name="title_activity_display_article"> News Hack(ed)</string>
     <string name="title_activity_nytheadlines">NYT Headlines</string>
     <string name="title_activity_nytopinion">NYT Opinion</string>
-    <string name="title_activity_nytpolitics">NYTpolitics</string>
-    <string name="title_activity_nytusnews">NYTusnews</string>
+    <string name="title_activity_nytpolitics">NYT Politics</string>
+    <string name="title_activity_nytusnews">NYT US News</string>
     <string name="title_activity_nytworldnews">NYT World News</string>
     <string name="title_activity_nytbusiness">NYT Business</string>
     <string name="title_activity_nyttech">NYT Technology</string>
+    <string name="title_activity_wsjtech">WSJ Technology</string>
+    <string name="title_activity_wsjbusiness">WSJ Business</string>
 
 </resources>
