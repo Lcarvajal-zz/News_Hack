@@ -21,7 +21,6 @@ public class DisplayArticle extends ActionBarActivity {
         Intent iin = getIntent();
         Bundle b = iin.getExtras();
 
-
         if(b!=null)
         {
             String HACKED =(String) b.get("HACKED_URL");

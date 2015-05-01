@@ -63,7 +63,7 @@ public class WSJextract extends AsyncTask<Void, Void, Void>
             int i = 0;
 
             //stores all headlines
-            Elements headline_elems = document.select(".tipTarget");
+            Elements headline_elems = document.select(".wsj-headline-link");
 
             for (Element headline_elem : headline_elems)
             //loop extracting titles and urls
@@ -73,7 +73,7 @@ public class WSJextract extends AsyncTask<Void, Void, Void>
 
                 //stores and manipulates url for hacking
                 urls.add(headline_elem.outerHtml());
-                urls.set(i, urls.get(i).replace("<h2 class=\"tipTarget\"><a href=\"", ""));
+                urls.set(i, urls.get(i).replace("<a class=\"wsj-headline-link\" href=\"", ""));
                 urls.set(i, urls.get(i).split("\"")[0]);
 
                 i++;
